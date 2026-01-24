@@ -1,73 +1,77 @@
 # Controller
 
-## 什么是 **Controller**
-获取别人的电脑命令行操作，ssh的简单替代方案
+[中文简介](README_zh.md) | [Lireo](/Frank-qwq)
 
-## 下载项目
-```bash
-git clone https://github.com/Frank-qwq/Controller
-cd Controller
-```
+## What is **Controller**  
+A simple alternative to SSH that allows you to access and control another computer's command-line operations.  
 
-## 服务端部署
-> **注意事项**
-> 1. 确保你的服务器能在公网上访问
-> 2. 支持操作系统 Windows/Linux
-> 3. 需要 Python 3.7 及以上版本运行
+## Download the Project  
+```bash  
+git clone https://github.com/Frank-qwq/Controller  
+cd Controller  
+```  
 
-1. 设置服务器端口（或使用默认端口跳过这一步）
+## Server Deployment  
+> **Notes**  
+> 1. Ensure your server is accessible over the public network.  
+> 2. Supported operating systems: Windows/Linux.  
+> 3. Python 3.7 or higher is required.  
+
+1. Set the server port (or skip this step to use the default port).  
     
-    打开 `server.py`
+    Open `server.py`.  
 
-    $Line\ 591:$ 将 `def start_server(host='0.0.0.0', port=30003):` 中 `30003` 改为所需端口
-2. 使用命令启动
-    ```bash
-    python server.py
-    ```
-    或
-    ```
-    python3 server.py
-    ```
-    即可进入Controller控制台
-3. 输入 `?` 回车查看所有命令的使用方法
+    $Line\ 591:$ Change `30003` in `def start_server(host='0.0.0.0', port=30003):` to your desired port.  
 
-## 客户端部署
-> **注意事项 !important**
-> 1. 仅支持 Windows 系统
-> 2. 需要 Python 3.7 +
+2. Start the server using the command:  
+    ```bash  
+    python server.py  
+    ```  
+    or  
+    ```bash  
+    python3 server.py  
+    ```  
+    You will then enter the Controller console.  
 
-### 设置服务器地址
-打开 `client.py`
+3. Type `?` and press Enter to view the usage of all commands.  
 
-$Line\ 190:$ `host = 'your.server.ip'` 中，将 `your.server.ip` 改为你的服务器的域名或ip
+## Client Deployment  
+> **Notes !important**  
+> 1. Only Windows is supported.  
+> 2. Python 3.7 or higher is required.  
 
-$Line\ 191:$ `port = 30003` 中，将 `30003` 改为你指定的端口（默认为30003无需更改）
+### Set the Server Address  
+Open `client.py`.  
 
-别忘记保存
+$Line\ 190:$ In `host = 'your.server.ip'`, replace `your.server.ip` with your server's domain or IP address.  
 
-<span id="pack-to-exe"></span>
-### 打包成exe（按需选择）
+$Line\ 191:$ In `port = 30003`, change `30003` to the port you specified (default is 30003, no change needed if using default).  
 
-使用命令打包
-> 如果没有 pyinstaller
-> ```bash
-> pip install pyinstaller
-> ```
-```bash
-pyinstaller --noconfirm --onefile --windowed client.py
-```
+Don’t forget to save the file.  
 
-### 使用 Python 启动
-```bash
-python client.py
-```
+<span id="pack-to-exe"></span>  
+### Package into an EXE (Optional)  
 
-### 使用 EXE 启动
-[`client.py` 文件打包成 `client.exe`](#pack-to-exe)
+Use the following command to package:  
+> If you don’t have pyinstaller installed:  
+> ```bash  
+> pip install pyinstaller  
+> ```  
+```bash  
+pyinstaller --noconfirm --onefile --windowed client.py  
+```  
 
-直接在目标主机上双击启动（如果可行）
+### Start with Python  
+```bash  
+python client.py  
+```  
 
-或使用命令行启动
-```bash
-client.exe
+### Start with EXE  
+[Package `client.py` into `client.exe`](#pack-to-exe)  
+
+Double-click to run on the target machine (if applicable).  
+
+Or start via command line:  
+```bash  
+client.exe  
 ```
