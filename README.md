@@ -1,6 +1,6 @@
 # Controller
 
-[中文简介](README_zh.md) | [Lireo](/Frank-qwq)
+[中文简介](README_zh.md) | [Lireo](https://github.com/Frank-qwq/)
 
 ## What is **Controller**  
 A simple alternative to SSH that allows you to access and control another computer's command-line operations.  
