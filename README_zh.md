@@ -1,6 +1,6 @@
 # Controller
 
-[English](README.md) | [Lireo](/Frank-qwq)
+[English](README.md) | [Lireo](https://github.com/Frank-qwq/)
 
 ## 什么是 **Controller**
 获取别人的电脑命令行操作，ssh的简单替代方案
