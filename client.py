@@ -55,9 +55,7 @@ def setup_daily_logging():
         datefmt='%Y-%m-%d %H:%M:%S'
     )
     handler.setFormatter(formatter)
-    
     logger.addHandler(handler)
-    
     return logger
 
 logger = setup_daily_logging()
@@ -234,15 +232,11 @@ def start_client(debug=True):
                 reconnect_delay = min(reconnect_delay * 2, max_reconnect_delay)  # 指数退避
                 
         except ConnectionRefusedError:
-            try:
-                time.sleep(5)
-            except KeyboardInterrupt:
-                os._exit(0)
+            try: time.sleep(5)
+            except KeyboardInterrupt: os._exit(0)
         except socket.timeout:
-            try:
-                time.sleep(5)
-            except KeyboardInterrupt:
-                os._exit(0)
+            try: time.sleep(5)
+            except KeyboardInterrupt: os._exit(0)
         except KeyboardInterrupt:
              os._exit(0)
         except Exception as e:
@@ -253,4 +247,4 @@ def start_client(debug=True):
                 os._exit(0)
 
 if __name__ == "__main__":
-    start_client(True)
+    start_client(debug=True)
